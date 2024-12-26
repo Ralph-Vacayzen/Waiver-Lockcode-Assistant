@@ -5,6 +5,22 @@ from streamlit_gsheets import GSheetsConnection
 
 st.set_page_config(page_title='Lockcode Assistant', page_icon='🔐')
 
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+.block-container
+{
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 connection = st.connection("gsheets", type=GSheetsConnection)
 bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="10m")
 gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="10m")
