@@ -56,7 +56,6 @@ st.subheader('🚙 Golf Carts')
 ⛑️ Safety first, always wear seat belts and adhere to the maximum capacity of the vehicle.
 
 🚫 Vehicles are not allowed to drive through the communities of Rosemary Beach Alys Beach or Seacrest Beach East. Please check with your property management company on any neighborhood specific rules and regulations. 
-
 """
 
 st.info('Please enter the passcode provided to you by your property management company.')
