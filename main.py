@@ -29,7 +29,7 @@ gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], tt
 st.caption('VACAYZEN')
 st.title('Lockcode Assistant')
 st.success('Thank you for filling out your waiver!')
-st.info('Please read the following terms and then enter your passcode to receive your lock combination.')
+st.info('Please read the following terms and then enter your confirmation code to receive your lock combination.')
 st.header('Terms & Conditions')
 
 st.subheader('🚲 Bicycles')
@@ -58,10 +58,10 @@ st.subheader('🚙 Golf Carts')
 🚫 Vehicles are not allowed to drive through the communities of Rosemary Beach Alys Beach or Seacrest Beach East. Please check with your property management company on any neighborhood specific rules and regulations. 
 """
 
-st.info('Please enter the passcode provided to you by your property management company.')
+st.info('Please enter the confirmation code provided to you by your property management company.')
 
 
-code = st.text_input('Passcode')
+code = st.text_input('Confirmation Code')
 if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'):
 
     bf = bike_data[bike_data['ORDER #'].astype(str) == code]
@@ -70,4 +70,4 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
     if len(bf) > 0: st.metric('BIKE LOCK',str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]))
     if len(gf) > 0: st.metric('GART LOCKBOX',str(gf[st.secrets['spreadsheet']['gart_lock']].values[0]))
     if len(bf) == 0 and len(gf) == 0:
-        st.warning('Please provide a valid passcode.')
+        st.warning('Please provide a valid confirmation code.')
