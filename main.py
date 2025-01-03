@@ -29,7 +29,7 @@ gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], tt
 st.caption('VACAYZEN')
 st.title('Lockcode Assistant')
 st.success('Thank you for filling out your waiver!')
-st.info('Please read the following terms and then enter your confirmation code to receive your lock combination.')
+st.info('Please read the following and then enter your confirmation code to receive your lock combination.')
 st.header('Terms & Conditions')
 
 st.subheader('🚲 Bicycles')
