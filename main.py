@@ -39,23 +39,23 @@ st.subheader('🚲 Bicycles')
 🏠 Bikes must be returned to the property of origin upon your departure.
 """
 
-st.subheader('🚙 Golf Carts')
+st.subheader('🚙 Low Speed Vehicles (LSVs) / Golf Carts (Garts)')
 """
 🧓🏼 All drivers must be 21 and older with a valid driver's license and proof of insurance.
 
-✍🏼 Note, only authorized drivers who have signed the waiver are able to drive the vehicle.
+✍🏼 Note, only authorized drivers who have signed the waiver are able to drive the LSV.
 
 🚫 Driving on Highway 98 is prohibited.
 
-🐢 Golf Carts can only be driven on roads with a speed limit of 35 MPH or less.
+🐢 LSVs can only be driven on roads with a speed limit of 35 MPH or less.
 
-🚚 Failure to abide by the rules and regulations will result in the golf cart being picked up, without compensation, and subject to service fees and/or damage repair costs.
+🚚 Failure to abide by the rules and regulations will result in the LSV being picked up, without compensation, and subject to service fees and/or damage repair costs.
 
 🔒 Please keep the key locked in the lockbox when not in use and upon departure or return.
 
-⛑️ Safety first, always wear seat belts and adhere to the maximum capacity of the vehicle.
+⛑️ Safety first, always wear seat belts and adhere to the maximum capacity of the LSV.
 
-🚫 Vehicles are not allowed to drive through the communities of Rosemary Beach Alys Beach or Seacrest Beach East. Please check with your property management company on any neighborhood specific rules and regulations. 
+🚫 LSVs are not allowed to drive through the communities of: Rosemary Beach, Alys Beach, or Seacrest Beach East. Please check with your property management company on any neighborhood specific rules and regulations. 
 """
 
 st.info('Please enter the confirmation code provided to you by your property management company.')
