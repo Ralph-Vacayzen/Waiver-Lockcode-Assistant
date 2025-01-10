@@ -55,7 +55,7 @@ st.subheader('🚙 Low Speed Vehicles / Golf Carts')
 
 ⛑️ Safety first, always wear seat belts and adhere to the maximum capacity of the LSV.
 
-🚫 LSVs are not allowed to drive through the communities of: Rosemary Beach, Alys Beach, or Seacrest Beach East. Please check with your property management company on any neighborhood specific rules and regulations. 
+🚫 LSVs are not allowed to drive through the communities of: Rosemary Beach, Alys Beach, or Seacrest Beach East. Please check with your property management company on any neighborhood-specific rules and regulations. 
 """
 
 st.info('Please enter the confirmation code provided to you by your property management company.')
