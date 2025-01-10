@@ -45,7 +45,7 @@ st.subheader('🚙 Low Speed Vehicles / Golf Carts')
 
 ✍🏼 Only authorized drivers who have signed the waiver are able to drive the Low Speed Vehicle (LSV).
 
-🚫 Driving on Highway 98 is prohibited.
+🚫 Driving an LSV on Highway 98 is prohibited.
 
 🐢 LSVs can only be driven on roads with a speed limit of 35 MPH or less.
 
