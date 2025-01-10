@@ -39,8 +39,7 @@ st.subheader('🚲 Bicycles')
 🏠 Bikes must be returned to the property of origin upon your departure.
 """
 
-st.subheader('🚙 Low Speed Vehicles')
-st.caption('LSVs / Golf Carts / Garts')
+st.subheader('🚙 Low Speed Vehicles / Golf Carts')
 """
 🧓🏼 All drivers must be 21 and older with a valid driver's license and proof of insurance.
 
