@@ -43,7 +43,7 @@ st.subheader('🚙 Low Speed Vehicles / Golf Carts')
 """
 🧓🏼 All drivers must be 21 and older with a valid driver's license and proof of insurance.
 
-✍🏼 Note, only authorized drivers who have signed the waiver are able to drive the Low Speed Vehicle (LSV).
+✍🏼 Only authorized drivers who have signed the waiver are able to drive the Low Speed Vehicle (LSV).
 
 🚫 Driving on Highway 98 is prohibited.
 
