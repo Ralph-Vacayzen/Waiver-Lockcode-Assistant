@@ -67,7 +67,11 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
     bf = bike_data[bike_data['ORDER #'].astype(str) == code]
     gf = gart_data[gart_data['ORDER #'].astype(str) == code]
 
-    if len(bf) > 0: st.metric('BIKE LOCK',str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]))
-    if len(gf) > 0: st.metric('GART LOCKBOX',str(gf[st.secrets['spreadsheet']['gart_lock']].values[0]))
+    if len(bf) > 0:
+        value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).zfill(4)
+        st.metric('BIKE LOCK', value)
+    if len(gf) > 0:
+        value = str(gf[st.secrets['spreadsheet']['gart_lock']].values[0]).zfill(4)
+        st.metric('GART LOCKBOX', value)
     if len(bf) == 0 and len(gf) == 0:
         st.warning('Please provide a valid confirmation code.')
