@@ -75,6 +75,3 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
         st.metric('GART LOCKBOX', value)
     if len(bf) == 0 and len(gf) == 0:
         st.warning('Please provide a valid confirmation code.')
-
-st.write("Bike Columns:", bike_data.columns.tolist())
-st.write("Gart Columns:", gart_data.columns.tolist())
