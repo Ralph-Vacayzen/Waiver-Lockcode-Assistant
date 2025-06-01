@@ -68,7 +68,7 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
     gf = gart_data[gart_data['ORDER #'].astype(str) == code]
 
     if len(bf) > 0:
-        value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).zfill(4)
+        value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).strip().lstrip("'").zfill(4)
         st.metric('BIKE LOCK', value)
     if len(gf) > 0:
         value = str(gf[st.secrets['spreadsheet']['gart_lock']].values[0]).zfill(4)
