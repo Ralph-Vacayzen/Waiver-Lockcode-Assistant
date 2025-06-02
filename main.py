@@ -74,6 +74,9 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
     bf = bike_data[bike_data[passcode_col] == code]
     gf = gart_data[gart_data[passcode_col] == code]
 
+    st.write(bf)
+    st.write(gf)
+
     
     if len(bf) > 0:
         value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).zfill(4)
