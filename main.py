@@ -22,8 +22,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 connection = st.connection("gsheets", type=GSheetsConnection)
-bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="10m")
-gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="10m")
+bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0")
+gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0")
 
 
 st.caption('VACAYZEN')
@@ -66,6 +66,9 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
 
     bf = bike_data[bike_data['ORDER #'].astype(str) == code]
     gf = gart_data[gart_data['ORDER #'].astype(str) == code]
+
+    st.write("Bike Matches:", bf)
+    st.write("Gart Matches:", gf)
 
     if len(bf) > 0:
         value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).zfill(4)
