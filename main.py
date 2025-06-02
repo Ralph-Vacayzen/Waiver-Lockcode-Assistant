@@ -63,8 +63,16 @@ st.info('Please enter the confirmation code provided to you by your property man
 code = st.text_input('Confirmation Code')
 if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'):
 
-    bf = bike_data[bike_data['ORDER #'].astype(str) == code]
-    gf = gart_data[gart_data['ORDER #'].astype(str) == code]
+    # Normalize input and data
+    passcode_col = st.secrets['spreadsheet']['passcode']
+    code = str(code).strip()
+    
+    bike_data[passcode_col] = bike_data[passcode_col].astype(str).str.strip()
+    gart_data[passcode_col] = gart_data[passcode_col].astype(str).str.strip()
+    
+    # Then filter
+    bf = bike_data[bike_data[passcode_col] == code]
+    gf = gart_data[gart_data[passcode_col] == code]
 
     
     if len(bf) > 0:
