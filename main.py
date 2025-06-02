@@ -22,8 +22,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 connection = st.connection("gsheets", type=GSheetsConnection)
-bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0")
-gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0")
+bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0m")
+gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0m")
 
 st.caption('VACAYZEN')
 st.title('Lockcode Assistant')
@@ -63,22 +63,10 @@ st.info('Please enter the confirmation code provided to you by your property man
 code = st.text_input('Confirmation Code')
 if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'):
 
-    # Normalize input and data
-    passcode_col = st.secrets['spreadsheet']['passcode']
-    code = str(code).strip()
-    
-    bike_data[passcode_col] = bike_data[passcode_col].astype(str).str.strip()
-    gart_data[passcode_col] = gart_data[passcode_col].astype(str).str.strip()
-    
-    # Then filter
-    bf = bike_data[bike_data[passcode_col] == code]
-    gf = gart_data[gart_data[passcode_col] == code]
+    bf = bike_data[bike_data['ORDER #'].astype(str) == code]
+    gf = gart_data[gart_data['ORDER #'].astype(str) == code]
 
-    st.write(code)
-    st.write(bf)
-    st.write(gf)
-
-    
+    st.write(bf) 
     if len(bf) > 0:
         value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).zfill(4)
         st.metric('BIKE LOCK', value)
