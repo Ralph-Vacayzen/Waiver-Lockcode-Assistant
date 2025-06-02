@@ -69,8 +69,7 @@ code = st.text_input('Confirmation Code')
 if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'):
 
     bf = bike_data[bike_data[passcode_col] == code.strip()]
-
-    gf = gart_data[gart_data['ORDER #'].astype(str) == code]
+    gf = gart_data[gart_data[passcode_col] == code.strip()]
 
     if len(bf) > 0:
         value = str(bf[st.secrets['spreadsheet']['bike_lock']].values[0]).zfill(4)
