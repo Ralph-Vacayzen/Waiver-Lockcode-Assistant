@@ -22,8 +22,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 connection = st.connection("gsheets", type=GSheetsConnection)
-bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0m")
-gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0m")
+bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="10m")
+gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="10m")
 
 passcode_col = st.secrets['spreadsheet']['passcode']
 bike_data[passcode_col] = bike_data[passcode_col].apply(lambda x: str(int(x)) if pd.notnull(x) else "")
