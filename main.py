@@ -24,7 +24,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 connection = st.connection("gsheets", type=GSheetsConnection)
 bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0m")
 gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0m")
-st.write(bike_data)
+
 
 st.caption('VACAYZEN')
 st.title('Lockcode Assistant')
