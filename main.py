@@ -74,6 +74,7 @@ if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'
     bf = bike_data[bike_data[passcode_col] == code]
     gf = gart_data[gart_data[passcode_col] == code]
 
+    st.write(code)
     st.write(bf)
     st.write(gf)
 
