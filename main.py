@@ -25,6 +25,11 @@ connection = st.connection("gsheets", type=GSheetsConnection)
 bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0m")
 gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0m")
 
+passcode_col = st.secrets['spreadsheet']['passcode']
+bike_data[passcode_col] = bike_data[passcode_col].apply(lambda x: str(int(x)) if pd.notnull(x) else "")
+gart_data[passcode_col] = gart_data[passcode_col].apply(lambda x: str(int(x)) if pd.notnull(x) else "")
+
+
 st.caption('VACAYZEN')
 st.title('Lockcode Assistant')
 st.success('Thank you for filling out your waiver!')
@@ -63,7 +68,8 @@ st.info('Please enter the confirmation code provided to you by your property man
 code = st.text_input('Confirmation Code')
 if st.button('Get Access', icon='🔑', use_container_width=True, type='primary'):
 
-    bf = bike_data[bike_data['ORDER #'].astype(str) == code]
+    bf = bike_data[bike_data[passcode_col] == code.strip()]
+
     gf = gart_data[gart_data['ORDER #'].astype(str) == code]
 
     if len(bf) > 0:
