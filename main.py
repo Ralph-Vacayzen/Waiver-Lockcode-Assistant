@@ -25,6 +25,9 @@ connection = st.connection("gsheets", type=GSheetsConnection)
 bike_data  = connection.read(worksheet=st.secrets['spreadsheet']['bike_tab'], ttl="0m")
 gart_data  = connection.read(worksheet=st.secrets['spreadsheet']['gart_tab'], ttl="0m")
 
+passcode_col = st.secrets['spreadsheet']['passcode']
+st.write(bike_data[passcode_col])
+
 
 st.caption('VACAYZEN')
 st.title('Lockcode Assistant')
